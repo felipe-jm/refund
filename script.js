@@ -144,16 +144,17 @@ function updateTotals() {
       const symbolBRL = document.createElement("small");
       symbolBRL.textContent = "R$";
 
-      // Formata o valor e remove o R$.
-      total = formatCurrencyBRL(value).toUpperCase().replace("R$", "");
+      // Soma o valor total.
+      total += value;
 
-      console.log(total);
+      // Formata o valor e remove o R$.
+      totalValue = formatCurrencyBRL(total).toUpperCase().replace("R$", "");
 
       // Limpa o conteúdo do elemento.
       expensesTotal.innerHTML = "";
 
       // Adiciona o símbolo da moeda e o valor total formatado.
-      expensesTotal.append(symbolBRL, total);
+      expensesTotal.append(symbolBRL, totalValue);
     }
   } catch (error) {
     console.log(error);
